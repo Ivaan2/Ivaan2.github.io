@@ -1024,11 +1024,19 @@ pre code {
     flex: 0 0 25%;
     max-width: 25%;
   }
-  .col-md-4 {
-    -ms-flex: 0 0 33.333333%;
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%;
-  }
+  @media (min-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 33.333333%; /* Toma un tercio del espacio en tabletas y desktop */
+        max-width: 33.333333%;
+    }
+    
+    /* Aplicar d-flex solo en pantallas de ordenadores */
+    .justify-content-between.align-items-center {
+        display: flex;
+        justify-content: between;
+        align-items: center;
+    }
+}
   .col-md-5 {
     -ms-flex: 0 0 41.666667%;
     flex: 0 0 41.666667%;
